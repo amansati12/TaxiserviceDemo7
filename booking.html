@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Book a Ride — LuxRide</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="pageLoader"><div class="loader-logo">LUXRIDE</div><div class="loader-track"><div class="loader-fill"></div></div></div>
+<canvas id="bgCanvas"></canvas>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">LUXRIDE</a>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="fleet.html">Fleet</a>
+      <a class="nav-link" href="airport.html">Airport</a>
+      <a class="nav-link" href="tours.html">Tours</a>
+      <a class="nav-link" href="blog.html">Blog</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="nav-link nav-cta active" href="booking.html">Book Ride</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-deco"></div>
+  <div class="container">
+    <div class="col-lg-7 reveal">
+      <div class="section-tag">Instant Booking</div>
+      <h1 class="page-title">Book Your <span class="g">Ride</span></h1>
+      <p class="section-sub mt-3">Fill in your details and confirm in under 2 minutes. Fixed pricing, verified drivers, instant confirmation.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><span>Book a Ride</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<div style="background:var(--ink2);border-bottom:1px solid var(--border);padding:1rem 0;position:sticky;top:70px;z-index:100">
+  <div class="container">
+    <div class="row g-2 text-center">
+      <div class="col-6 col-md-3"><span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-lock" style="color:var(--neon);margin-right:.3rem"></i>SSL Encrypted</span></div>
+      <div class="col-6 col-md-3"><span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-shield-halved" style="color:var(--neon);margin-right:.3rem"></i>Verified Drivers</span></div>
+      <div class="col-6 col-md-3"><span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-tag" style="color:var(--neon);margin-right:.3rem"></i>Fixed Pricing</span></div>
+      <div class="col-6 col-md-3"><span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-headset" style="color:var(--neon);margin-right:.3rem"></i>24/7 Support</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Section -->
+<section class="section-pad" id="bookSection" style="position:relative;z-index:1">
+  <div class="container">
+    <div class="booking-card reveal">
+
+      <!-- Step indicator -->
+      <div style="display:flex;gap:0;margin-bottom:2rem;overflow-x:auto;padding-bottom:.5rem">
+        <div style="display:flex;align-items:center;gap:.5rem;flex-shrink:0">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:#fff">1</div>
+          <span style="font-size:.78rem;font-weight:600;color:var(--neon)">Journey</span>
+          <div style="width:40px;height:1px;background:var(--border)"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:.5rem;flex-shrink:0">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:#fff">2</div>
+          <span style="font-size:.78rem;font-weight:600;color:var(--neon)">Vehicle</span>
+          <div style="width:40px;height:1px;background:var(--border)"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:.5rem;flex-shrink:0">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:#fff">3</div>
+          <span style="font-size:.78rem;font-weight:600;color:var(--neon)">Payment</span>
+          <div style="width:40px;height:1px;background:var(--border)"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:.5rem;flex-shrink:0">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:var(--muted)">4</div>
+          <span style="font-size:.78rem;font-weight:600;color:var(--muted)">Confirm</span>
+        </div>
+      </div>
+
+      <div class="booking-layout" id="bookingContent">
+        <!-- Left: Form -->
+        <div>
+          <!-- Journey Details -->
+          <h5 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0">1</span>Journey Details
+          </h5>
+          <div class="field-row" style="margin-bottom:1rem">
+            <div class="field-group"><div class="field-label">Pickup Location *</div><input class="field-input" id="bPickup" placeholder="Full pickup address"/></div>
+            <div class="field-group"><div class="field-label">Destination *</div><input class="field-input" id="bDrop" placeholder="Drop-off address"/></div>
+          </div>
+          <div class="field-row" style="margin-bottom:1rem">
+            <div class="field-group"><div class="field-label">Date *</div><input type="date" class="field-input" id="bDate"/></div>
+            <div class="field-group"><div class="field-label">Time *</div><input type="time" class="field-input" id="bTime" value="10:00"/></div>
+          </div>
+          <div class="field-row" style="margin-bottom:1.5rem">
+            <div class="field-group">
+              <div class="field-label">Passengers</div>
+              <select class="field-input">
+                <option>1 Passenger</option><option selected>2 Passengers</option>
+                <option>3 Passengers</option><option>4 Passengers</option>
+                <option>5 Passengers</option><option>6+</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <div class="field-label">Journey Type</div>
+              <select class="field-input">
+                <option>One Way</option><option>Round Trip</option>
+                <option>Hourly Hire</option><option>Multi-stop</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row" style="margin-bottom:1.8rem">
+            <div class="field-group"><div class="field-label">Your Name *</div><input class="field-input" id="bName" placeholder="Full name"/></div>
+            <div class="field-group"><div class="field-label">Phone *</div><input class="field-input" id="bPhone" placeholder="+91 98765 43210"/></div>
+          </div>
+          <div class="field-row" style="margin-bottom:1.8rem">
+            <div class="field-group"><div class="field-label">Email</div><input type="email" class="field-input" placeholder="your@email.com"/></div>
+            <div class="field-group"><div class="field-label">Flight No. (airport rides)</div><input class="field-input" placeholder="e.g. AI 505"/></div>
+          </div>
+
+          <!-- Vehicle Selection -->
+          <h5 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0">2</span>Select Vehicle
+          </h5>
+          <div class="car-opts mb-4" id="carOpts"></div>
+
+          <!-- Promo -->
+          <h5 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0"><i class="fas fa-tag" style="font-size:.6rem"></i></span>Promo Code
+          </h5>
+          <div class="promo-row">
+            <input class="promo-inp" id="bPromo" placeholder="Enter code (try: LUXRIDE10)"/>
+            <button class="promo-apply" onclick="applyPromo()">Apply</button>
+          </div>
+          <div id="promoMsg" style="font-size:.75rem;min-height:1.2rem;margin-bottom:.8rem"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem">
+            <span style="font-size:.73rem;color:var(--muted)">Quick codes:</span>
+            <span style="font-size:.73rem;color:var(--neon);cursor:pointer;border-bottom:1px solid rgba(108,99,255,.3)" onclick="document.getElementById('bPromo').value='LUXRIDE10'">LUXRIDE10 — 10% off</span>
+            <span style="font-size:.73rem;color:var(--neon);cursor:pointer;border-bottom:1px solid rgba(108,99,255,.3)" onclick="document.getElementById('bPromo').value='WELCOME20'">WELCOME20 — 20% off</span>
+            <span style="font-size:.73rem;color:var(--neon);cursor:pointer;border-bottom:1px solid rgba(108,99,255,.3)" onclick="document.getElementById('bPromo').value='AIRPORT15'">AIRPORT15 — 15% airport</span>
+          </div>
+
+          <!-- Payment -->
+          <h5 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0">3</span>Payment Method
+          </h5>
+          <div class="pay-opts mb-4">
+            <div class="pay-opt sel" onclick="selPay(this)">💵 Cash on Ride</div>
+            <div class="pay-opt" onclick="selPay(this)">📱 UPI / GPay</div>
+            <div class="pay-opt" onclick="selPay(this)">💳 Credit / Debit Card</div>
+            <div class="pay-opt" onclick="selPay(this)">🏦 Net Banking</div>
+            <div class="pay-opt" onclick="selPay(this)">👜 LuxRide Wallet</div>
+            <div class="pay-opt" onclick="selPay(this)">📋 Corporate Account</div>
+          </div>
+
+          <!-- Special Instructions -->
+          <div class="field-group">
+            <div class="field-label">Special Instructions</div>
+            <textarea class="field-input" rows="3" placeholder="Address landmarks, access codes, specific requests…" style="resize:vertical"></textarea>
+          </div>
+
+          <!-- Terms -->
+          <div style="display:flex;align-items:flex-start;gap:.6rem;margin:1.2rem 0">
+            <input type="checkbox" id="terms" style="accent-color:var(--neon);margin-top:.2rem;flex-shrink:0"/>
+            <label for="terms" style="font-size:.8rem;color:var(--muted);cursor:pointer">I agree to LuxRide's <a href="#" style="color:var(--neon)">Terms of Service</a> and <a href="#" style="color:var(--neon)">Privacy Policy</a>, including the cancellation policy.</label>
+          </div>
+        </div>
+
+        <!-- Right: Summary -->
+        <div class="summary-aside">
+          <div class="summary-head"><i class="fas fa-receipt" style="color:var(--neon);margin-right:.5rem"></i>Booking Summary</div>
+          <div class="sum-row"><span>Vehicle</span><span id="sBVeh">Business Class</span></div>
+          <div class="sum-row"><span>Journey</span><span>One Way</span></div>
+          <div class="sum-row"><span>Passengers</span><span>2</span></div>
+          <div class="sum-row"><span>Base fare</span><span id="sBBase">₹3,200</span></div>
+          <div class="sum-row"><span>GST (5%)</span><span id="sBGst">₹160</span></div>
+          <div class="sum-row"><span>Discount</span><span id="sBDisc" style="color:var(--grn)">—</span></div>
+          <div class="sum-total"><span>Total</span><span id="sBTotal">₹3,360</span></div>
+          <button class="btn-confirm btn-primary w-100 justify-content-center mt-3" onclick="confirmBook()" style="border-radius:12px;padding:.9rem">
+            Confirm & Book Ride →
+          </button>
+          <p style="font-size:.68rem;color:var(--muted);text-align:center;margin-top:.7rem">
+            <i class="fas fa-lock" style="color:var(--neon)"></i> 256-bit SSL · Instant SMS confirmation
+          </p>
+          <div style="border-top:1px solid var(--border);margin-top:1.2rem;padding-top:1.2rem">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;font-family:'Space Grotesk',sans-serif">Why Book Direct?</div>
+            <div style="display:flex;flex-direction:column;gap:.5rem">
+              <div style="display:flex;gap:.5rem;font-size:.78rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--grn);margin-top:.15rem;flex-shrink:0"></i>Best price — no platform fees</div>
+              <div style="display:flex;gap:.5rem;font-size:.78rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--grn);margin-top:.15rem;flex-shrink:0"></i>Priority fleet assignment</div>
+              <div style="display:flex;gap:.5rem;font-size:.78rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--grn);margin-top:.15rem;flex-shrink:0"></i>Direct 24/7 support access</div>
+              <div style="display:flex;gap:.5rem;font-size:.78rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--grn);margin-top:.15rem;flex-shrink:0"></i>Loyalty points on every ride</div>
+            </div>
+          </div>
+          <div style="margin-top:1.2rem;border-top:1px solid var(--border);padding-top:1.2rem;text-align:center">
+            <p style="font-size:.78rem;color:var(--muted);margin-bottom:.8rem">Need help booking?</p>
+            <a href="tel:+919876543210" class="btn-outline" style="padding:.5rem 1.2rem;font-size:.78rem;display:inline-flex">
+              <i class="fas fa-phone me-2"></i>Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div id="successMsg" style="display:none;text-align:center;padding:3rem 1rem">
+        <div style="font-size:4rem;margin-bottom:1rem">✅</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.8rem;margin-bottom:.8rem;background:linear-gradient(135deg,var(--neon),var(--grn));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Booking Confirmed!</h3>
+        <p style="color:var(--muted);font-size:.95rem;max-width:480px;margin:0 auto 2rem;line-height:1.75">Your ride has been booked successfully. You'll receive an SMS confirmation at your phone number. Your driver will be assigned 2 hours before pickup.</p>
+        <button class="btn-primary" onclick="resetBook()">Book Another Ride →</button>
+      </div>
+    </div>
+
+    <!-- Fare Estimator Widget -->
+    <div class="calc-grid mt-5">
+      <div class="calc-card reveal-left">
+        <div class="section-tag">Estimate First</div>
+        <h4 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1.5rem">Quick Fare <span style="background:linear-gradient(135deg,var(--neon),var(--neon2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Estimator</span></h4>
+        <div class="range-wrap">
+          <div class="range-top"><span>Distance (km)</span><span class="range-val" id="distVal">15 km</span></div>
+          <input type="range" min="1" max="100" value="15" id="distRange"/>
+        </div>
+        <div class="field-group">
+          <div class="field-label">Vehicle Class</div>
+          <select class="field-input" id="vehClass">
+            <option value="1.8">Economy</option>
+            <option value="2.5" selected>Business Class</option>
+            <option value="3.5">SUV</option>
+            <option value="4.0">Electric</option>
+            <option value="6.0">VIP Limousine</option>
+          </select>
+        </div>
+        <div class="range-wrap">
+          <div class="range-top"><span>Passengers</span><span class="range-val" id="paxVal">2 pax</span></div>
+          <input type="range" min="1" max="7" value="2" id="paxRange"/>
+        </div>
+      </div>
+      <div class="calc-result-card reveal-right">
+        <div class="fare-display">
+          <div class="fare-label">Estimated Fare</div>
+          <div class="fare-number" id="fareResult">₹0</div>
+        </div>
+        <div class="fare-row"><span>Base fare</span><span id="rBase">₹0</span></div>
+        <div class="fare-row"><span>Distance charge</span><span id="rDist">₹0</span></div>
+        <div class="fare-row"><span>GST (5%)</span><span id="rGst">₹0</span></div>
+        <div class="fare-total"><span>Total</span><span id="rTotal">₹0</span></div>
+        <div class="tags-row">
+          <span class="badge badge-green">✓ Fixed price</span>
+          <span class="badge badge-green">✓ No surge</span>
+          <span class="badge badge-neon">★ Tolls included</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand">LUXRIDE</div><p class="footer-desc">Redefining luxury transportation since 2016.</p></div>
+      <div><div class="footer-head">Navigate</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="fleet.html">Fleet</a></li><li><a href="booking.html">Book Now</a></li></ul></div>
+      <div><div class="footer-head">Services</div><ul class="footer-links"><li><a href="airport.html">Airport</a></li><li><a href="services.html">Corporate</a></li><li><a href="tours.html">Tours</a></li></ul></div>
+      <div><div class="footer-head">Newsletter</div><div class="nl-form"><input type="email" class="nl-inp" id="nlEmail" placeholder="Your email"/><button class="nl-btn" onclick="subNewsletter('nlEmail')">→</button></div></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">© 2024 LuxRide. All rights reserved.</span></div>
+  </div>
+</footer>
+<button id="btt"><i class="fas fa-chevron-up"></i></button>
+<div id="notif" class="notif"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

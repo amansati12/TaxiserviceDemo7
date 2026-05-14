@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Premium Services — LuxRide</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="pageLoader"><div class="loader-logo">LUXRIDE</div><div class="loader-track"><div class="loader-fill"></div></div></div>
+<canvas id="bgCanvas"></canvas>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">LUXRIDE</a>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="index.html">Home</a><a class="nav-link" href="about.html">About</a>
+      <a class="nav-link active" href="services.html">Services</a><a class="nav-link" href="fleet.html">Fleet</a>
+      <a class="nav-link" href="airport.html">Airport</a><a class="nav-link" href="tours.html">Tours</a>
+      <a class="nav-link" href="blog.html">Blog</a><a class="nav-link" href="contact.html">Contact</a>
+      <a class="nav-link nav-cta" href="booking.html">Book Ride</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero"><div class="page-hero-deco"></div><div class="container"><div class="col-lg-7 reveal"><div class="section-tag">What We Offer</div><h1 class="page-title">Our <span class="g">Services</span></h1><p class="section-sub mt-3">Six distinct services — one singular standard of excellence.</p><div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><span>Services</span></div></div></div></section>
+
+<section class="section-pad" style="position:relative;z-index:1">
+  <div class="container">
+    <!-- Jump links -->
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:3rem" class="reveal">
+      <a href="#airport" class="btn-outline" style="padding:.4rem 1rem;font-size:.75rem">Airport Transfer</a>
+      <a href="#corporate" class="btn-outline" style="padding:.4rem 1rem;font-size:.75rem">Corporate Rides</a>
+      <a href="#wedding" class="btn-outline" style="padding:.4rem 1rem;font-size:.75rem">Wedding Car</a>
+      <a href="#vip" class="btn-outline" style="padding:.4rem 1rem;font-size:.75rem">VIP Chauffeur</a>
+      <a href="#tours-link" class="btn-outline" style="padding:.4rem 1rem;font-size:.75rem">City Tours</a>
+      <a href="#longdist" class="btn-outline" style="padding:.4rem 1rem;font-size:.75rem">Long Distance</a>
+    </div>
+
+    <!-- Each service -->
+    <div class="row align-items-center gy-5 mb-5 pb-5" style="border-bottom:1px solid var(--border)" id="airport">
+      <div class="col-lg-5 reveal-left"><div class="svc-card p-5 text-center"><div class="svc-icon-wrap mx-auto mb-4" style="width:80px;height:80px;border-radius:20px;font-size:2.5rem">✈️</div><div style="display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap"><span class="badge badge-neon">24/7</span><span class="badge badge-neon">Flight Tracking</span><span class="badge badge-green">Meet & Greet</span></div></div></div>
+      <div class="col-lg-6 offset-lg-1 reveal-right"><div class="section-tag">Service 01</div><h2 class="section-title">Airport <span class="grad">Transfers</span></h2><p style="color:var(--muted);line-height:1.9;margin-bottom:1.5rem;font-size:.93rem">Real-time flight tracking, 60-minute free wait, meet & greet with name board. Available 24/7 at all major airports — we adjust automatically for delays.</p><div style="display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.5rem"><div style="display:flex;gap:.6rem;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--grn);margin-top:.15rem"></i>Real-time flight monitoring</div><div style="display:flex;gap:.6rem;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--grn);margin-top:.15rem"></i>60-minute complimentary wait time</div><div style="display:flex;gap:.6rem;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--grn);margin-top:.15rem"></i>Fixed pricing — no surge charges</div></div><a href="booking.html" class="btn-primary">Book Airport Transfer <i class="fas fa-arrow-right ms-1"></i></a></div>
+    </div>
+
+    <div class="row align-items-center gy-5 mb-5 pb-5 flex-lg-row-reverse" style="border-bottom:1px solid var(--border)" id="corporate">
+      <div class="col-lg-5 reveal-right"><div class="svc-card p-5 text-center"><div class="svc-icon-wrap mx-auto mb-4" style="width:80px;height:80px;border-radius:20px;font-size:2.5rem">💼</div><div style="display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap"><span class="badge badge-neon">Priority</span><span class="badge badge-neon">Monthly Billing</span><span class="badge badge-green">GST Invoice</span></div></div></div>
+      <div class="col-lg-6 reveal-left"><div class="section-tag">Service 02</div><h2 class="section-title">Corporate <span class="grad">Rides</span></h2><p style="color:var(--muted);line-height:1.9;margin-bottom:1.5rem;font-size:.93rem">Dedicated account manager, monthly billing, priority fleet access, and Wi-Fi-enabled vehicles for productive journeys. Designed for businesses that value image and reliability.</p><a href="booking.html" class="btn-primary">Book Corporate Ride <i class="fas fa-arrow-right ms-1"></i></a></div>
+    </div>
+
+    <div class="row align-items-center gy-5 mb-5 pb-5" style="border-bottom:1px solid var(--border)" id="wedding">
+      <div class="col-lg-5 reveal-left"><div class="svc-card p-5 text-center"><div class="svc-icon-wrap mx-auto mb-4" style="width:80px;height:80px;border-radius:20px;font-size:2.5rem">💍</div><div style="display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap"><span class="badge badge-neon">Floral Décor</span><span class="badge badge-neon">Red Carpet</span><span class="badge badge-green">Champagne</span></div></div></div>
+      <div class="col-lg-6 offset-lg-1 reveal-right"><div class="section-tag">Service 03</div><h2 class="section-title">Wedding <span class="grad">Limousine</span></h2><p style="color:var(--muted);line-height:1.9;margin-bottom:1.5rem;font-size:.93rem">Floral arrangements, ribbon décor, red carpet, and a professional uniformed chauffeur. Make your most special day even more unforgettable with a grand entrance.</p><a href="booking.html" class="btn-primary">Book Wedding Car <i class="fas fa-arrow-right ms-1"></i></a></div>
+    </div>
+
+    <div class="row align-items-center gy-5 mb-5 pb-5 flex-lg-row-reverse" style="border-bottom:1px solid var(--border)" id="vip">
+      <div class="col-lg-5 reveal-right"><div class="svc-card p-5 text-center"><div class="svc-icon-wrap mx-auto mb-4" style="width:80px;height:80px;border-radius:20px;font-size:2.5rem">👑</div><div style="display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap"><span class="badge badge-neon">NDA Signed</span><span class="badge badge-neon">Hourly Hire</span><span class="badge badge-green">Total Discretion</span></div></div></div>
+      <div class="col-lg-6 reveal-left"><div class="section-tag">Service 04</div><h2 class="section-title">VIP <span class="grad">Chauffeur</span></h2><p style="color:var(--muted);line-height:1.9;margin-bottom:1.5rem;font-size:.93rem">Signed NDA, security-trained drivers, route planning, and the finest vehicles. Complete confidentiality guaranteed. Available by the hour or full day for VIPs and executives.</p><a href="booking.html" class="btn-primary">Book VIP Chauffeur <i class="fas fa-arrow-right ms-1"></i></a></div>
+    </div>
+
+    <div class="row align-items-center gy-5 mb-5 pb-5" style="border-bottom:1px solid var(--border)" id="tours-link">
+      <div class="col-lg-5 reveal-left"><div class="svc-card p-5 text-center"><div class="svc-icon-wrap mx-auto mb-4" style="width:80px;height:80px;border-radius:20px;font-size:2.5rem">🗺️</div><div style="display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap"><span class="badge badge-neon">Local Guide</span><span class="badge badge-neon">Custom Route</span><span class="badge badge-green">Photo Stops</span></div></div></div>
+      <div class="col-lg-6 offset-lg-1 reveal-right"><div class="section-tag">Service 05</div><h2 class="section-title">City <span class="grad">Tours</span></h2><p style="color:var(--muted);line-height:1.9;margin-bottom:1.5rem;font-size:.93rem">Discover cities at your own pace in absolute comfort. Our expert driver-guides take you beyond tourist trails to hidden gems, iconic landmarks, and culinary highlights.</p><a href="tours.html" class="btn-primary">Explore Tour Packages <i class="fas fa-arrow-right ms-1"></i></a></div>
+    </div>
+
+    <div class="row align-items-center gy-5" id="longdist">
+      <div class="col-lg-5 reveal-left reveal-right"><div class="svc-card p-5 text-center"><div class="svc-icon-wrap mx-auto mb-4" style="width:80px;height:80px;border-radius:20px;font-size:2.5rem">🛣️</div><div style="display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap"><span class="badge badge-neon">Intercity</span><span class="badge badge-neon">Wi-Fi</span><span class="badge badge-green">Rest Stops</span></div></div></div>
+      <div class="col-lg-6 offset-lg-1 reveal-right"><div class="section-tag">Service 06</div><h2 class="section-title">Long-Distance <span class="grad">Travel</span></h2><p style="color:var(--muted);line-height:1.9;margin-bottom:1.5rem;font-size:.93rem">Intercity journeys with Wi-Fi, refreshments, charging points, and an experienced driver. Comfortable, reliable, and luxurious — however long the road ahead.</p><a href="booking.html" class="btn-primary">Book Long Distance <i class="fas fa-arrow-right ms-1"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-pad-sm" style="background:var(--ink2);position:relative;z-index:1;border-top:1px solid var(--border)">
+  <div class="container"><div class="cta-banner reveal"><h2 class="section-title text-center" style="text-align:center">Can't Find What You <span class="grad">Need?</span></h2><p class="section-sub mx-auto text-center mb-4">Contact us for bespoke transportation tailored to your exact requirements.</p><div class="d-flex justify-content-center gap-3 flex-wrap"><a href="contact.html" class="btn-primary">Talk to Our Team <i class="fas fa-arrow-right ms-1"></i></a></div></div></div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand">LUXRIDE</div><p class="footer-desc">Redefining luxury transportation since 2016.</p></div>
+      <div><div class="footer-head">Navigate</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="booking.html">Book Now</a></li></ul></div>
+      <div><div class="footer-head">Services</div><ul class="footer-links"><li><a href="airport.html">Airport</a></li><li><a href="services.html">Corporate</a></li><li><a href="tours.html">Tours</a></li></ul></div>
+      <div><div class="footer-head">Newsletter</div><div class="nl-form"><input type="email" class="nl-inp" id="nlEmail" placeholder="Your email"/><button class="nl-btn" onclick="subNewsletter('nlEmail')">→</button></div></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">© 2024 LuxRide. All rights reserved.</span></div>
+  </div>
+</footer>
+<button id="btt"><i class="fas fa-chevron-up"></i></button>
+<div id="notif" class="notif"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
